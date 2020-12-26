@@ -13,16 +13,7 @@ private:
     // control elements
     wxBoxSizer *_dialogSizer;
     wxBitmap _image;
-
-    //// STUDENT CODE
-    ////
-
-   // ChatLogic *_chatLogic;
-   
-   std::unique_ptr<ChatLogic> _chatLogic;  //since we need it as an exclusive member unique pointer is the best choice
-
-    ////
-    //// EOF STUDENT CODE
+    std::unique_ptr<ChatLogic> _chatLogic;  
 
 public:
     // constructor / destructor

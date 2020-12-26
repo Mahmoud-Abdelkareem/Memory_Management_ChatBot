@@ -42,8 +42,6 @@ ChatBot::~ChatBot()  //1.Destructor
     }
 }
 
-//// STUDENT CODE
-////
 ChatBot::ChatBot(const ChatBot &source) // 2 : copy constructor
     {
          std::cout << "ChatBot Copy Constructor " << std::endl;
@@ -54,10 +52,8 @@ ChatBot::ChatBot(const ChatBot &source) // 2 : copy constructor
           
     }
 
-/*How to define an assignment operator outside my header file in C++ i used this link https://stackoverflow.com/questions/11347599/how-to-define-an-assignment-operator-outside-my-header-file-in-c */
-
 ChatBot &ChatBot::operator=(const ChatBot &source) // 3 : copy assignment operator
-{
+    {
     std::cout << "ChatBot Copy Assignment Operator " << std::endl;
     
     if (this == &source) {
@@ -69,9 +65,9 @@ ChatBot &ChatBot::operator=(const ChatBot &source) // 3 : copy assignment operat
     _image = new wxBitmap(*source._image);
 
     return *this;
-}
+    }
 
- ChatBot::ChatBot(ChatBot &&source) // 4 : move constructor
+ChatBot::ChatBot(ChatBot &&source) // 4 : move constructor
     {
         std::cout << "ChatBot Move Constructor " << std::endl;
         _chatLogic = source._chatLogic;
@@ -99,8 +95,7 @@ ChatBot &ChatBot::operator=(ChatBot &&source) // 5 : move assignment operator
        
   return *this;
     }
-////
-//// EOF STUDENT CODE
+
 
 void ChatBot::ReceiveMessageFromUser(std::string message)
 {
